@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "NEXORA Field Companion"
+description = "A mobile-first smart silage testing companion for dairy farmers, with local demo sensor analysis, farm-specific recommendations, milk-quality decision support, voice guidance, and offline-friendly history."
+version = "1.0.0"
+id = "artifacts/nexora-field-companion"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22850
+
+[services.development]
+run = "pnpm --filter @workspace/nexora-field-companion run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nexora-field-companion", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nexora-field-companion/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22850"
+BASE_PATH = "/"

@@ -1,0 +1,1308 @@
+BUILD A COMPLETE FUNCTIONAL MOBILE-FIRST WEB APP PROTOTYPE CALLED "NEXORA – FIELD COMPANION".
+
+IMPORTANT:
+Build the entire application in one working project. This is an SIH prototype/demo, not a production application. Do NOT make it a static UI or collection of screenshots. Every important button, form, navigation item, edit action and test flow must actually work.
+
+Do not require paid APIs, API keys, external AI services, databases, or hardware for the current prototype. Use realistic local/demo logic and localStorage. The future hardware integration will be ESP32-based.
+
+==================================================
+NEXORA PURPOSE
+==================================================
+
+NEXORA is a Smart AI-Enabled Rapid Feed and Silage Quality Testing System for Dairy Farmers.
+
+The complete concept is:
+
+Silage sample
+→ Camera/Image
+→ pH + Moisture + Temperature + VOC + NIR
+→ ESP32/device layer
+→ AI analysis
+→ Silage quality score
+→ Spoilage/deterioration risk
+→ Farm-specific feeding/ration recommendation
+→ Milk-quality decision support
+→ Actual milk result
+→ Feedback loop
+→ Better future recommendations
+
+The system should AUGMENT experienced farmers, not replace them.
+
+Milk-quality prediction must ALWAYS be presented as decision support with uncertainty/confidence, NOT as a guaranteed causal improvement.
+
+==================================================
+TECHNICAL REQUIREMENTS
+==================================================
+
+Use a simple reliable web stack suitable for Replit.
+
+Prefer:
+- React
+- Vite
+- CSS/Tailwind if already configured
+- localStorage for persistence
+- Browser-native Web Speech API for voice
+
+Do not depend on paid APIs.
+
+The app must run immediately in Replit.
+
+Make it responsive, but prioritize a polished PHONE/MOBILE layout.
+
+==================================================
+VISUAL DESIGN
+==================================================
+
+Create a premium but simple agricultural-tech design.
+
+Brand:
+NEXORA
+FIELD COMPANION
+
+Use:
+- Deep/forest green
+- Light green
+- Warm cream/off-white
+- White
+- Small yellow accent for warnings/highlights
+
+Use:
+- Rounded cards
+- Clean icons
+- Comfortable spacing
+- Professional typography
+- Clear hierarchy
+- Large touch-friendly buttons
+- Mobile-first bottom navigation
+
+The existing visual style should resemble a modern farmer field companion rather than a generic dashboard.
+
+Do NOT use a touchscreen/hardware display UI.
+
+==================================================
+APP NAVIGATION
+==================================================
+
+Bottom navigation:
+
+1. Home
+2. Test
+3. History
+4. Profile
+
+Header:
+- NEXORA logo/name
+- Microphone button
+- Profile button
+
+The microphone button must ACTUALLY work.
+
+==================================================
+1. HOME / DASHBOARD
+==================================================
+
+Show:
+
+NEXORA
+FIELD COMPANION
+
+Greeting using the saved farmer name.
+
+Example:
+"Good morning, Ravi."
+
+Show current date/time.
+
+Main card:
+"NEXORA CHECK-IN"
+
+"Test your silage before the first feed."
+
+Button:
+"+ Start New Test"
+
+Also show:
+- Latest silage quality
+- Spoilage risk
+- Latest milk-quality decision support
+- Last test date
+- Quick summary
+- Device status
+- Voice assistant access
+
+Use saved data if available.
+
+If no user data exists, use realistic default demo data.
+
+==================================================
+2. PROFILE
+==================================================
+
+The current profile MUST BE EDITABLE.
+
+Show:
+- Farmer name
+- Farm name
+- Location
+- Breed
+- Lactation stage
+- Average/current milk yield
+- Current ration
+
+Have a working pencil/Edit button.
+
+When Edit is pressed:
+show editable form fields.
+
+Save button MUST actually save the data.
+
+Use localStorage.
+
+After saving, the changed name/farm/location/etc. must update throughout the application.
+
+Example:
+If I change "Ravi Kumar" to "Gagana",
+the dashboard greeting should immediately become:
+"Good morning, Gagana."
+
+Do NOT leave profile fields as decorative text.
+
+==================================================
+3. LANGUAGE SYSTEM
+==================================================
+
+Support:
+
+English
+Kannada
+Hindi
+
+Create ONE centralized translation system.
+
+Every user-facing interface string must be translated.
+
+Do NOT hard-code English text throughout components.
+
+Translate ALL:
+- Navigation
+- Dashboard
+- Greeting
+- Buttons
+- Headings
+- Forms
+- Test flow
+- Sample instructions
+- Sensor labels
+- AI analysis
+- Quality statuses
+- Spoilage risk
+- Recommendations
+- Milk-quality section
+- History
+- Charts
+- Profile
+- QR
+- Device status
+- Voice assistant
+- Placeholders
+- Alerts
+- Errors
+- Loading states
+- Empty states
+- Dialogs
+- Success messages
+- All other UI text
+
+When Kannada is selected, the ENTIRE UI must become Kannada.
+
+When Hindi is selected, the ENTIRE UI must become Hindi.
+
+Do not translate only the Profile page or a few labels.
+
+User-entered personal data such as:
+Ravi Kumar
+Malenadu Dairy
+Chikkamagaluru
+IDs
+numbers
+etc.
+must NOT be automatically translated.
+
+Persist selected language in localStorage.
+
+Language must remain selected while navigating and after refresh.
+
+Make Kannada/Hindi text responsive so it does not overflow cards/buttons.
+
+==================================================
+4. SILAGE TEST FLOW
+==================================================
+
+Create a proper step-by-step testing workflow.
+
+STEP 1 — FARM & ANIMAL DATA
+
+Show/edit:
+- Farmer name
+- Farm name
+- Location
+- Breed
+- Lactation stage
+- Current milk yield
+- Current ration
+
+Pre-fill realistic demo data.
+
+Allow editing.
+
+Use saved profile data automatically.
+
+STEP 2 — SILAGE SAMPLE
+
+Show:
+
+"Place a representative silage sample in the NEXORA testing chamber."
+
+Include:
+- Take/Upload Sample Image
+- Image preview
+- Sample ID
+- Farm ID
+- QR identification
+
+The image upload should actually work and show the selected image.
+
+Camera access may be used where browser-supported, with upload as fallback.
+
+STEP 3 — READING MODE
+
+Provide TWO options:
+
+A. "Demo Sensor Data"
+B. "Manual Demo Mode"
+
+IMPORTANT:
+Keep Demo Sensor Data so the original demonstration still works.
+
+Demo values can be realistic simulated values such as:
+- pH
+- Moisture %
+- Temperature °C
+- VOC
+- NIR indicators
+
+Clearly label them:
+"Demo Sensor Data – Simulated"
+
+Do NOT falsely claim that these values are coming from physical hardware.
+
+--------------------------------------------------
+MANUAL DEMO MODE
+--------------------------------------------------
+
+This is extremely important.
+
+Since the physical prototype is not currently available, allow the user to manually enter readings.
+
+Fields:
+- pH
+- Moisture %
+- Temperature °C
+- VOC
+- NIR readings / nutritional indicators
+
+Also allow sample information to be edited.
+
+Label:
+"Manual Demo Mode"
+
+When the user enters values and presses Analyze, the analysis MUST use those entered values.
+
+Do not continue showing fixed/random values after manual input.
+
+Example:
+If I change pH from 4.2 to 5.5, the analysis should respond accordingly.
+
+==================================================
+5. NIR SPECTROSCOPY
+==================================================
+
+Include NIR as part of the NEXORA sensing system.
+
+Represent it as an optical/NIR sensing module providing estimated nutritional/compositional indicators.
+
+Do NOT imply that NIR directly measures every silage parameter.
+
+Show NIR separately from:
+- pH
+- Moisture
+- Temperature
+- VOC
+
+The app should display example NIR-derived indicators such as:
+- Dry matter/nutritional estimate
+- Crude protein estimate
+- Fibre-related indicator
+- Other relevant compositional indicators
+
+Clearly indicate these are prototype/demo estimates.
+
+==================================================
+6. HARDWARE / DEVICE SECTION
+==================================================
+
+Create a "NEXORA Device" section.
+
+Visually explain:
+
+Silage sample
+↓
+Camera + sensing modules
+↓
+pH / Moisture / Temperature / VOC / NIR
+↓
+ESP32
+↓
+NEXORA software
+↓
+AI analysis
+
+Show:
+"Device Connected"
+
+But also distinguish:
+
+"Demo Sensor Data"
+"Manual Demo Mode"
+"Live Hardware Data — Coming Soon"
+
+Do NOT pretend the physical ESP32 is currently sending readings.
+
+The future architecture is:
+
+Sensors + Camera + NIR
+→ ESP32
+→ NEXORA App/AI
+
+==================================================
+7. AI SILAGE ANALYSIS
+==================================================
+
+After Analyze, calculate a realistic demo result from the readings.
+
+Display:
+
+Overall Silage Quality Score /100
+
+Classification:
+- Good
+- Moderate
+- Attention Required
+
+Show individual indicators:
+- pH status
+- Moisture status
+- Temperature status
+- VOC status
+- NIR/nutritional indicators
+- Spoilage/deterioration risk
+
+Use understandable explanations.
+
+The result should change based on manual readings.
+
+For example, abnormal pH/moisture/temperature/VOC should influence the score and risk.
+
+This does NOT need to be scientifically validated AI yet; clearly treat the current model as prototype/demo logic.
+
+==================================================
+8. SPOILAGE / DETERIORATION PREDICTION
+==================================================
+
+Show:
+- Spoilage risk %
+- Deterioration risk
+- Main contributing factors
+- Monitoring recommendation
+
+Explain WHY risk is high or low.
+
+Example:
+"Elevated moisture and temperature are contributing to the higher deterioration risk."
+
+Avoid presenting demo calculations as scientifically validated predictions.
+
+==================================================
+9. FARM-SPECIFIC FEEDING RECOMMENDATION
+==================================================
+
+After silage analysis, generate an actionable recommendation based on:
+
+- Silage readings
+- Silage quality
+- Spoilage risk
+- Breed
+- Lactation stage
+- Milk yield
+- Current ration
+- Farm history
+
+Show:
+- Whether the silage is suitable for feeding
+- Suggested feeding/ration adjustment
+- What to monitor
+- Whether retesting is recommended
+
+Position NEXORA as decision support that assists an experienced farmer.
+
+==================================================
+10. MILK QUALITY DECISION SUPPORT
+==================================================
+
+Create a section:
+
+"Predicted Milk Quality Impact"
+
+Use:
+- Silage measurements
+- Animal data
+- Current ration
+- Historical farm data
+
+Show selected milk indicators such as:
+- Fat
+- Protein
+- Milk yield
+- Other relevant quality indicators
+
+Display:
+- Predicted impact
+- Confidence %
+- Uncertainty
+
+IMPORTANT WORDING:
+
+"This is an AI-based decision-support estimate based on available feed and farm data. It is not a guaranteed causal prediction."
+
+Never say:
+"NEXORA guarantees higher milk quality."
+
+Instead say:
+"NEXORA estimates a possible impact to support feeding decisions."
+
+==================================================
+11. FEEDBACK LOOP
+==================================================
+
+After a feeding decision, allow the farmer to enter ACTUAL later milk results.
+
+Fields:
+- Milk yield
+- Fat %
+- Protein %
+- Other milk-quality observations
+
+Button:
+"Save Actual Result"
+
+Then show:
+
+Predicted result
+vs.
+Actual result
+
+Explain that historical actual results can be used to improve future farm-specific recommendations.
+
+Flow:
+
+Silage test
+→ Recommendation
+→ Predicted milk impact
+→ Actual milk result
+→ Historical feedback
+→ Future recommendation
+
+Save this information in localStorage.
+
+==================================================
+12. HISTORY
+==================================================
+
+Create a fully functional History page.
+
+Every saved test should appear with:
+
+- Date
+- Farm name
+- Sample ID
+- Silage score
+- pH
+- Moisture
+- Temperature
+- VOC
+- NIR
+- Spoilage risk
+- Recommendation
+- Milk prediction
+
+Clicking a history item should open its complete details.
+
+Add simple charts/trends for:
+- Silage quality
+- pH
+- Moisture
+- Temperature
+- Milk yield/quality
+
+Charts must use actual saved data where available.
+
+Do not show unrelated random history after the user has saved real manual-demo tests.
+
+Allow deleting a demo test.
+
+==================================================
+13. QR AUTHENTICATION / IDENTIFICATION
+==================================================
+
+Include QR functionality.
+
+Show:
+"Scan QR"
+
+Use QR for:
+- Farm identification
+- Sample identification
+
+For this prototype, it can be simulated.
+
+Allow displaying a generated/demo:
+Farm ID
+Sample ID
+
+Do not require a paid QR service.
+
+Clearly describe it as prototype identification/authentication.
+
+==================================================
+14. AI VOICE ASSISTANT — ACTUALLY FUNCTIONAL
+==================================================
+
+The existing microphone icon MUST NOT be decorative.
+
+Implement browser-native:
+SpeechRecognition / webkitSpeechRecognition
+and
+SpeechSynthesis
+
+No paid voice API.
+No API key.
+
+When microphone is tapped:
+
+1. Open NEXORA Voice Guide.
+2. Show "Listening..."
+3. Activate microphone.
+4. Convert speech to text.
+5. Put recognized text into input.
+6. Generate response using CURRENT NEXORA demo/manual data.
+7. Display response.
+8. Read response aloud.
+
+Show states:
+- Ready
+- Listening...
+- Processing...
+- Speaking...
+- Stop Speaking
+
+If microphone permission is denied or unsupported:
+show:
+"Microphone access is unavailable. You can type your question instead."
+
+Do not crash.
+
+Typed questions must still work.
+
+Quick questions:
+- Is my silage safe?
+- What should I feed today?
+- Why is the spoilage risk high?
+- What is my silage quality?
+- What is the moisture level?
+- Show my latest test.
+
+Quick questions must generate contextual responses using the current test data.
+
+==================================================
+15. VOICE LANGUAGE
+==================================================
+
+Voice must follow selected language.
+
+English:
+en-IN
+
+Kannada:
+kn-IN
+
+Hindi:
+hi-IN
+
+Use appropriate SpeechSynthesis voice where the device/browser supports it.
+
+If voice recognition or speech synthesis for a particular language is unavailable, gracefully fall back to text.
+
+==================================================
+16. OFFLINE-FIRST BEHAVIOUR
+==================================================
+
+Since farmers may have poor internet connectivity:
+
+The prototype should work without an internet connection after the app loads where possible.
+
+Use localStorage for:
+- Profile
+- Language
+- Tests
+- History
+- Milk results
+- Preferences
+
+Show an appropriate status such as:
+"Offline data saved"
+when relevant.
+
+Future cloud synchronization can be marked:
+"Sync when connection is available."
+
+Do not require an online backend for the current prototype.
+
+==================================================
+17. DEMO DATA BEHAVIOUR
+==================================================
+
+On first launch, provide realistic demo data so the app does not look empty.
+
+Example farmer:
+Ravi Kumar
+
+Farm:
+Malenadu Dairy
+
+Location:
+Chikkamagaluru, Karnataka
+
+Provide a realistic demo silage test.
+
+BUT:
+The user must be able to change ALL of this.
+
+Once the user edits profile or manually enters a test, the app must use the new values.
+
+No fake hard-coded data should override user-entered data.
+
+==================================================
+18. SAVE/PERSISTENCE
+==================================================
+
+Use localStorage.
+
+Persist:
+- Profile
+- Language
+- Current test
+- Saved tests
+- History
+- Actual milk results
+- Voice preferences if useful
+
+Refreshing the page must NOT erase the user's demo data.
+
+==================================================
+19. ERROR HANDLING
+==================================================
+
+Every action should have useful feedback.
+
+Examples:
+- Image upload failed
+- Microphone unavailable
+- Empty form
+- Invalid sensor reading
+- Test saved
+- Profile saved
+- Milk result saved
+
+Do not allow invalid numeric values to break calculations.
+
+==================================================
+20. SIH DEMO MODE
+==================================================
+
+Create a clear demo experience suitable for an SIH presentation.
+
+The complete demonstration should be possible in this sequence:
+
+HOME
+↓
+Start New Test
+↓
+Select Farm
+↓
+Add/Upload Silage Image
+↓
+Choose Manual Demo Mode
+↓
+Enter pH, moisture, temperature, VOC, NIR
+↓
+Analyze
+↓
+Silage Quality Score
+↓
+Spoilage Risk
+↓
+AI Explanation
+↓
+Feeding/Ration Recommendation
+↓
+Milk Quality Decision Support
+↓
+Save Test
+↓
+History
+↓
+Enter Actual Milk Result
+↓
+Compare Prediction vs Actual
+↓
+Feedback Loop
+
+Also demonstrate:
+Profile editing
+Language switching
+QR
+Voice assistant
+Device/ESP32 architecture
+
+==================================================
+21. IMPORTANT UI/UX REQUIREMENTS
+==================================================
+
+All buttons must actually work.
+
+Examples:
+- Start New Test
+- Edit
+- Save
+- Analyze
+- Upload
+- Camera
+- Next
+- Back
+- Save Test
+- Save Actual Result
+- Scan QR
+- Voice microphone
+- Send
+- Stop Speaking
+- Language selector
+- History item
+- Delete test
+
+No dead buttons.
+
+No fake navigation.
+
+No placeholder pages.
+
+No "coming soon" for features that are supposed to work in the current software prototype, except LIVE HARDWARE DATA.
+
+==================================================
+22. RESPONSIVE DESIGN
+==================================================
+
+Primary target:
+Mobile phone.
+
+Make sure:
+- Bottom navigation works
+- Cards fit narrow screens
+- Kannada/Hindi text wraps correctly
+- Buttons remain usable
+- Charts fit mobile screens
+- Voice Guide fits the screen
+- Forms are easy to fill
+
+Also support desktop/tablet reasonably for SIH presentation.
+
+==================================================
+23. FINAL QUALITY CHECK
+==================================================
+
+Before finishing, test the complete application.
+
+Verify:
+
+1. Profile can actually be edited and saved.
+2. Changed name appears on Home.
+3. Changed farm details appear in tests.
+4. Manual sensor readings are accepted.
+5. Analysis changes based on manual readings.
+6. Demo Sensor Data still works.
+7. Tests can be saved.
+8. Saved tests appear in History.
+9. History uses actual saved values.
+10. Actual milk results can be entered.
+11. Prediction vs actual feedback works.
+12. Language changes EVERY screen.
+13. Kannada is not partially translated.
+14. Hindi is not partially translated.
+15. Language persists after refresh.
+16. Microphone actually attempts speech recognition.
+17. Voice response is spoken when supported.
+18. Typed voice questions work.
+19. Voice follows selected language.
+20. QR demo works.
+21. Image upload works.
+22. No paid API is required.
+23. No API keys are required.
+24. App works with local/demo data.
+25. No existing NEXORA feature is accidentally removed.
+
+FINAL PRINCIPLE:
+
+This must feel like a REAL FUNCTIONAL SOFTWARE PROTOTYPE of NEXORA, not a static mockup.
+
+The physical sensing hardware is the future input layer.
+For now:
+- Demo Sensor Data demonstrates the concept.
+- Manual Demo Mode allows real interaction during the SIH presentation.
+- Later, ESP32 + camera + pH + moisture + temperature + VOC + NIR can replace the manual/demo inputs.
+
+Do not claim that the current simulated readings are from real hardware.
+Do not claim guaranteed milk-quality improvement.
+Keep the existing polished NEXORA visual identity while making the entire application functional.Fix the EXISTING NEXORA app without changing its current design or removing any features.
+
+1. VOICE ASSISTANT:
+Make the microphone button actually work using browser-native SpeechRecognition/webkitSpeechRecognition and SpeechSynthesis only. No paid APIs or API keys.
+
+When microphone is tapped:
+- Open Voice Guide
+- Show Listening state
+- Capture user's speech
+- Convert speech to text
+- Put it in the input
+- Generate a response using the existing NEXORA demo/simulated data
+- Display the response
+- Read the response aloud
+- Show Speaking/Stop states
+- If microphone is unsupported or permission is denied, show a friendly message and keep typed questions working.
+
+Make the existing quick questions functional too:
+"Is my silage safe?"
+"What should I feed today?"
+"Why is the spoilage risk high?"
+
+2. COMPLETE LANGUAGE TRANSLATION:
+The current language selector only translates some text. Fix it globally.
+
+Create a centralized translation system for English, Kannada and Hindi.
+
+EVERY user-facing UI string must use translations, including:
+navigation, dashboard, headings, buttons, forms, test flow, sensor readings, pH, moisture, temperature, VOC, NIR, AI analysis, quality status, spoilage risk, recommendations, milk-quality prediction, confidence/uncertainty, history, charts, QR, device status, voice assistant, placeholders, alerts, errors, loading messages and dialogs.
+
+Do NOT leave hard-coded English UI text.
+
+User-entered data such as Ravi Kumar, Malenadu Dairy, Chikkamagaluru, IDs and numbers should NOT be translated.
+
+The selected language must update the ENTIRE app immediately and remain active when navigating between screens and after refresh.
+
+3. VOICE LANGUAGE:
+Voice assistant must follow the selected language:
+English → en-IN
+Kannada → kn-IN
+Hindi → hi-IN
+
+Use the appropriate speech-synthesis language where the device supports it. If unavailable, fall back gracefully to text.
+
+4. PRESERVE DESIGN:
+Keep the existing NEXORA green/cream design, cards, typography, bottom navigation, dashboard, Voice Guide and mobile-first layout. Only fix functionality and incomplete translation.
+
+5. TEST EVERYTHING:
+Verify:
+English → voice works.
+Kannada → ALL screens are Kannada.
+Hindi → ALL screens are Hindi.
+Language remains selected while navigating.
+Quick voice questions work.
+Typed assistant still works.
+Microphone failure does not crash the app.
+
+Do not make the microphone merely decorative. Actually implement the functionality.IMPORTANT: MODIFY THE EXISTING NEXORA APP. DO NOT REBUILD THE APP FROM SCRATCH AND DO NOT REMOVE ANY EXISTING FEATURES OR DESIGN. This is a refinement/fix pass.
+
+Fix ALL language and voice-assistant issues throughout the entire NEXORA application.
+
+==================================================
+1. MAKE THE VOICE ASSISTANT ACTUALLY WORK
+==================================================
+
+The current microphone button and "NEXORA VOICE GUIDE" are only visual/AI-assistant elements. Make the voice feature FUNCTIONAL using browser-native Web Speech APIs only.
+
+Do NOT require:
+- OpenAI API
+- Gemini API
+- ElevenLabs
+- Any paid API
+- Any API key
+- Any external voice service
+
+Use:
+- SpeechRecognition / webkitSpeechRecognition for speech-to-text where supported
+- SpeechSynthesis / speechSynthesisUtterance for text-to-speech
+
+VOICE BUTTON:
+When the user taps the microphone icon in the header:
+1. Open the NEXORA Voice Guide.
+2. Show a clear "Listening..." state.
+3. Activate the device microphone.
+4. Convert the user's spoken question into text.
+5. Put the recognized text into the question/input field.
+6. Automatically generate the appropriate demo response using the existing simulated NEXORA data.
+7. Read the response aloud using speech synthesis.
+8. Show the written response on screen as well.
+
+Example:
+User says:
+"Is my silage safe?"
+
+App should show:
+User: Is my silage safe?
+
+NEXORA:
+"Based on the current sample readings, the silage is in the Good range. The spoilage risk is low. Continue monitoring moisture and temperature."
+
+Then speak the response aloud.
+
+Also support:
+"What should I feed today?"
+"Why is the spoilage risk high?"
+"What is my silage quality?"
+"Show my latest test."
+"What is the moisture level?"
+
+The assistant should use the CURRENT demo/sample data rather than giving random unrelated answers.
+
+VOICE STATES:
+Clearly show:
+- Ready to listen
+- Listening...
+- Processing...
+- Speaking...
+- Microphone unavailable / browser unsupported
+
+Add a Stop Speaking button when speech is playing.
+
+If microphone permission is denied, show a friendly message:
+"Microphone access is unavailable. You can type your question instead."
+
+Do not crash if SpeechRecognition is unsupported.
+
+IMPORTANT:
+The microphone icon must actually trigger voice functionality. Do not leave it as a decorative button.
+
+==================================================
+2. FIX MULTILINGUAL SUPPORT COMPLETELY
+==================================================
+
+The current language selector changes some text but MANY parts of the application remain in English.
+
+Fix this completely.
+
+Create ONE centralized translation system/object for the entire application.
+
+Supported languages:
+- English
+- Kannada
+- Hindi
+
+Every user-facing static string MUST come from the translation system.
+
+Do NOT leave hard-coded English text inside components.
+
+Translate ALL of these:
+- Header
+- Logo subtitle
+- Greeting
+- Date/time labels where applicable
+- Dashboard text
+- Home navigation
+- Test navigation
+- History navigation
+- Profile navigation
+- Start New Test
+- Test instructions
+- Farm details
+- Farmer details
+- Animal details
+- Breed
+- Lactation stage
+- Milk yield
+- Ration
+- Sample information
+- Upload image
+- Camera
+- Analyze Sample
+- Sensor readings
+- pH
+- Moisture
+- Temperature
+- VOC
+- NIR
+- NIR nutrient indicators
+- Device connected
+- Device disconnected
+- Demo Mode
+- Simulated readings
+- AI analysis
+- Quality score
+- Good
+- Moderate
+- Attention Required
+- Spoilage risk
+- Deterioration risk
+- Recommendation
+- Feeding recommendation
+- Milk Quality Impact
+- Predicted impact
+- Confidence
+- Uncertainty notice
+- Actual milk result
+- Save Actual Result
+- History
+- Trends
+- QR authentication
+- Scan QR
+- Farm ID
+- Sample ID
+- Voice Assistant
+- Voice Guide
+- All suggested voice questions
+- Input placeholders
+- Send
+- Close
+- Back
+- Next
+- Previous
+- Submit
+- Save
+- Cancel
+- Edit
+- Profile
+- Preferences
+- Language
+- Location
+- Logout
+- Success messages
+- Error messages
+- Empty states
+- Loading states
+- Tooltips
+- Dialogs
+- Alerts
+- Buttons
+- Cards
+- Chart labels
+- Units/labels where translation is appropriate
+
+Also translate dynamically generated AI/demo responses.
+
+For example, when Kannada is selected, this must NOT happen:
+
+English:
+"Silage Quality"
+"Good"
+"Start New Test"
+
+while only a few labels become Kannada.
+
+EVERY interface string should change to Kannada.
+
+Likewise, when Hindi is selected, the complete interface should change to Hindi.
+
+==================================================
+3. LANGUAGE MUST APPLY GLOBALLY
+==================================================
+
+The selected language must persist while navigating between:
+Home → Test → Analysis → Recommendation → Milk Prediction → History → Profile → Voice Assistant.
+
+Do not reset the language when changing screens.
+
+Store the selected language in React state/context/localStorage so it remains selected after refresh if possible.
+
+When the user selects Kannada:
+ALL screens immediately use Kannada.
+
+When the user selects Hindi:
+ALL screens immediately use Hindi.
+
+When English is selected:
+Return the complete interface to English.
+
+==================================================
+4. VOICE LANGUAGE MUST FOLLOW SELECTED APP LANGUAGE
+==================================================
+
+The voice assistant must respect the selected language.
+
+English selected:
+- Recognize English speech where browser support permits.
+- Speak English responses.
+
+Kannada selected:
+- Set speech recognition language to Kannada where supported (kn-IN).
+- Speak Kannada responses using Kannada speech synthesis where the device/browser provides that voice.
+
+Hindi selected:
+- Use hi-IN where supported.
+- Speak Hindi responses where the device/browser provides that voice.
+
+If a specific browser/device does not support a language, gracefully fall back to typed input and display a clear message instead of breaking.
+
+==================================================
+5. VOICE GUIDE UI
+==================================================
+
+Keep the existing beautiful NEXORA Voice Guide design shown in the current app.
+
+Keep quick questions such as:
+- "Is my silage safe?"
+- "What should I feed today?"
+- "Why is the spoilage risk high?"
+
+But make them functional.
+
+When a quick question is tapped:
+1. Put the question into the conversation.
+2. Generate a response using current demo data.
+3. Display the response.
+4. Read it aloud if voice is available.
+
+The text input and Send button must also continue working.
+
+==================================================
+6. DO NOT TRANSLATE USER DATA INCORRECTLY
+==================================================
+
+Do NOT automatically translate personal/user-entered information such as:
+- Ravi Kumar
+- Malenadu Dairy
+- Chikkamagaluru
+- Farm names
+- Sample IDs
+- QR IDs
+- Numeric values
+
+These are data, not interface labels.
+
+For example:
+"Ravi Kumar" should remain "Ravi Kumar" even when Kannada is selected.
+
+But:
+"Good morning"
+"Location"
+"Preferences"
+"Language"
+"Save"
+etc. MUST translate.
+
+==================================================
+7. AUDIT THE ENTIRE EXISTING APPLICATION
+==================================================
+
+After implementing the translation system and voice functionality, inspect EVERY page/component of the existing NEXORA app.
+
+Search for hard-coded user-facing English strings.
+
+Replace them with translation keys.
+
+There must be NO partially translated screen.
+
+Check:
+- Home
+- Test flow
+- Sample upload
+- Sensor readings
+- AI analysis
+- Recommendations
+- Milk-quality decision support
+- Feedback loop
+- History
+- Profile
+- QR section
+- Device section
+- Voice assistant
+- Modals
+- Toasts
+- Error messages
+- Empty states
+- Buttons
+- Navigation
+- Charts
+
+==================================================
+8. PRESERVE THE EXISTING NEXORA DESIGN
+==================================================
+
+Do NOT redesign the application.
+
+Keep the current:
+- NEXORA branding
+- Green agricultural-tech aesthetic
+- Cream/off-white background
+- Rounded cards
+- Typography
+- Bottom navigation
+- Header microphone icon
+- Profile icon
+- Dashboard layout
+- Voice Guide modal
+- Mobile-first design
+
+Only improve functionality and language completeness.
+
+Make sure translated Kannada/Hindi text does not overflow cards or buttons. Allow responsive wrapping and appropriate font sizing.
+
+==================================================
+9. FINAL FUNCTIONAL TEST
+==================================================
+
+Before finishing, test these exact flows:
+
+TEST A:
+English → tap microphone → speak/activate voice → question appears → response appears → response is spoken.
+
+TEST B:
+Select Kannada → navigate through every major screen → verify ALL interface labels are Kannada.
+
+TEST C:
+Select Hindi → navigate through every major screen → verify ALL interface labels are Hindi.
+
+TEST D:
+Select Kannada → open Voice Guide → quick question → Kannada response → Kannada speech if supported.
+
+TEST E:
+Select Hindi → open Voice Guide → quick question → Hindi response → Hindi speech if supported.
+
+TEST F:
+Refresh the page → selected language remains selected.
+
+TEST G:
+Microphone permission denied → app does not crash → typed assistant remains available.
+
+IMPORTANT FINAL REQUIREMENT:
+Do not just make the microphone icon look functional.
+Do not just translate the Profile page.
+Actually implement working browser voice interaction and a GLOBAL translation system covering the entire existing NEXORA application.
+
+Keep all existing NEXORA functionality intact.
