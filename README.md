@@ -12,10 +12,10 @@ The system combines feed quality parameters, image-based assessment, and intelli
 
 Poor-quality silage can lead to:
 
-- Reduced milk yield
-- Nutritional deficiencies
-- Animal health issues
-- Economic losses for farmers
+* Reduced milk yield
+* Nutritional deficiencies
+* Animal health issues
+* Economic losses for farmers
 
 Traditional testing methods are time-consuming and often inaccessible to small and medium-scale farmers.
 
@@ -25,76 +25,73 @@ Traditional testing methods are time-consuming and often inaccessible to small a
 
 NEXORA enables farmers to:
 
-- Analyze silage quality
-- Record feed parameters
-- Track feed batches
-- Monitor spoilage risk
-- Receive feeding recommendations
-- Maintain historical records
+* Analyze silage quality
+* Record feed parameters
+* Track feed batches
+* Monitor spoilage risk
+* Receive feeding recommendations
+* Maintain historical records
 
 ---
 
 ## Current Prototype Features
 
 ### Farmer Profile Management
-- Farm details
-- Herd information
-- Breed information
-- Milk yield tracking
+
+* Farm details
+* Herd information
+* Breed information
+* Milk yield tracking
 
 ### Feed Quality Assessment
-- pH
-- Moisture
-- Temperature
-- VOC Indicators
-- NIR Inputs
+
+* pH
+* Moisture
+* Temperature
+* VOC Indicators
+* NIR Inputs
 
 ### Quality Analysis
-- Feed Quality Score
-- Risk Assessment
-- Recommendation Engine
+
+* Feed Quality Score
+* Risk Assessment
+* Recommendation Engine
 
 ### Batch Management
-- Sample IDs
-- Batch Records
-- Historical Tracking
+
+* Sample IDs
+* Batch Records
+* Historical Tracking
 
 ### Smart Features
-- Multilingual Support
-- Voice Interaction
-- QR-based Tracking
-- Dashboard Analytics
+
+* Multilingual Support
+* Voice Interaction
+* QR-based Tracking
+* Dashboard Analytics
 
 ---
 
-## Technology Stack
+## App Screenshots
 
-### Frontend
-- React
-- TypeScript
-- Vite
+### Dashboard
 
-### Backend
-- Node.js
-- REST APIs
+![NEXORA Dashboard](./screenshots/dashboard.jpeg)
 
-### Database
-- Structured Data Storage
+### Feed Quality Readings
 
----
+![NEXORA Readings](./screenshots/readings.jpeg)
 
-## Future AI Integration
+### Quality Analysis
 
-- TensorFlow Lite Image Classification
-- OpenCV Image Processing
-- Random Forest Prediction Model
-- ESP32 Sensor Integration
-- Offline Edge Inference
+![NEXORA Analysis](./screenshots/analysis.jpeg)
 
----
+### Sample Photo
 
-## Team
+![NEXORA Sample Photo](./screenshots/sample-photo.jpeg)
 
-Team NEXORA AI32
+### Feed Recommendations
 
-Smart India Hackathon 2026
+![NEXORA Feed Recommendations](./screenshots/feed-recommendations.jpeg)
+
+### R
